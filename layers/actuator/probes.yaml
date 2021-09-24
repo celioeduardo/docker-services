@@ -19,7 +19,7 @@ patch: |-
           - name: app
             livenessProbe:
               httpGet:
-                path: /actuator/info
+                path: /actuator/health/liveness
                 port: 8080
               initialDelaySeconds: 60
               periodSeconds: 3
@@ -28,5 +28,5 @@ patch: |-
               initialDelaySeconds: 60
               periodSeconds: 10
               httpGet:
-                path: /actuator/health
+                path: /actuator/health/readiness
                 port: 8080
